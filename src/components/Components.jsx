@@ -9,15 +9,18 @@ function Button (props ){
              >{props.children}</button>
 }
 
+function Badge({ isNew}){
+    {if (isNew){
+        return <span className="badge badge-primary">new</span>
+    }}
+
+    return;
+}
+
 function ShoeCard(props){
 
     console.log(props)
-
-  if(!props.isNew) {
-
-      return <GhostIcon />;
-  }
-        
+ 
         
     return(
       
@@ -29,7 +32,7 @@ function ShoeCard(props){
             </picture>
             <div className="card-body">
                 <p className="card-title">{props.title}</p>
-                <span className="bagde badge badge-primary">new</span>
+                <Badge isNew={props.isNew} />
             </div>
         </div>
 
@@ -38,7 +41,7 @@ function ShoeCard(props){
 
 export default function Components   ()   {
   return <div className='flex flex-col items-start gap-4'>
-       <ShoeCard   image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="requin" />
+       <ShoeCard isNew={false}  image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="requin" />
        <ShoeCard isNew  image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="basketball" />
        <ShoeCard isNew image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="tenis" />
   </div>
