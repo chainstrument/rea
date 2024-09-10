@@ -40,8 +40,29 @@ function ShoeCard(props){
     )
 }
 
+const SHOES = [{
+    image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    title: "requin",
+    isNew: true,
+  },
+  {
+    image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    title: "basketball",
+    isNew: false,
+  },
+  {
+    image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+    title: "tenis",
+    isNew: true,
+  }]
+
 export default function Components   ()   {
   return <div className='flex flex-col items-start gap-4'>
+        {SHOES.map((shoe) =>  (
+            <p>{shoe.title}</p>
+        ))}
+       
+
        <ShoeCard    image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="requin" />
        <ShoeCard isNew  image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="basketball" />
        <ShoeCard isNew image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="tenis" />
