@@ -8,18 +8,19 @@ const handleClick = () => {
   return (
     <div className='flex align-items-left justify-content-center'>
         <button id="test_id" onClick={handleClick} className='btn btn-primary'>Click me</button>
-        <Todo />
+        <Todo onDelete={() => console.log('App deleted')} />
     </div>
   )
 }
 
-const Todo = () => {
+const Todo = (props) => {
     return (
         <div className="flex items-center gap-4">
             <p>Faire ses courses</p>
             <button 
                 onClick={() => {
                     console.log('deleted')
+                    props.onDelete?.();
                 }}
                 className='btn btn-error btn-sm'>X</button>
         </div>
