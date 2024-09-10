@@ -1,31 +1,29 @@
-import React from 'react'
+import { Plus, Search } from 'lucide-react'
+import  { useState } from 'react'
 
 const Test = () => {
+    const [count, setCount] = useState(10)
 
-const handleClick = () => {
-    console.log('clicked')
-}
+    const [todo, setTodo] = useState('')
+
+    const handleClick = () => {
+        console.log('clicked')
+        setCount(count + 10)
+    }
   return (
     <div className='flex align-items-left justify-content-center'>
         <button id="test_id" onClick={handleClick} className='btn btn-primary'>Click me</button>
-        <Todo onDelete={() => console.log('App deleted')} />
+        {count}
+
+        <label className="input input-bordered flex items-center gap-2">
+        <input type="text" className="grow" placeholder="Search" onChange={(e) => setTodo(e.target.value)} />
+        <Plus />
+        </label>
+        <p className='flex '>Todo : {todo}</p>
     </div>
   )
 }
-
-const Todo = (props) => {
-    return (
-        <div className="flex items-center gap-4">
-            <p>Faire ses courses</p>
-            <button 
-                onClick={() => {
-                    console.log('deleted')
-                    props.onDelete?.();
-                }}
-                className='btn btn-error btn-sm'>X</button>
-        </div>
-    )
-}
+ 
 
 
 export default Test
