@@ -3,11 +3,16 @@ import  { useState } from 'react'
 
 const Test = () => {
  
-    const [todos, setTodos] = useState({
+    const [todos, setTodos] = useState([{
         todo: "Faire les courses",
         completed: false,
-        id: 1
-    });
+        id: 1,
+        
+    },{
+        todo: "Faire les courses 2",
+        completed: false,
+        id: 2,
+    }]);
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -55,10 +60,7 @@ const Test = () => {
 const Todo = ({ todo }) => {
     return (
         <div className="card bg-base-100 shadow-md">
-            <div className="card-body">
-                <h2 className="card-title">{todo.todo}</h2>
-                <div className="badge badge-primary">new</div>
-            </div>
+          <p>{todo.todo}</p>
         </div>
     )
 }
