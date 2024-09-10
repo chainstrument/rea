@@ -3,7 +3,10 @@ import React from 'react'
 
 function Button (props ){
     console.log(props)
-    return <button className={'btn btn-primary ' + props.className}>{props.children}</button>
+    return <button
+        style={{color:'red'}}
+             className={'btn btn-primary ' + props.className}
+             >{props.children}</button>
 }
 
 export default function Components   ()   {
