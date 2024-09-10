@@ -6,6 +6,7 @@ const Test = () => {
     const [todos, setTodos] = useState({
         todo: "Faire les courses",
         completed: false,
+        id: 1
     });
 
     const handleSubmit = (e) => {
@@ -40,9 +41,26 @@ const Test = () => {
                 </label>
 
         </form>
-        
+        <div>
+            {todos.map((todo) => (
+
+                <Todo  key={todo.id} todo={todo} />
+              
+            ))}
+        </div>
     </div>
   )
+}
+
+const Todo = ({ todo }) => {
+    return (
+        <div className="card bg-base-100 shadow-md">
+            <div className="card-body">
+                <h2 className="card-title">{todo.todo}</h2>
+                <div className="badge badge-primary">new</div>
+            </div>
+        </div>
+    )
 }
  
 
