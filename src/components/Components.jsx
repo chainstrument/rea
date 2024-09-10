@@ -32,7 +32,7 @@ function ShoeCard(props){
             </picture>
             <div className="card-body">
                 <p className="card-title">{props.title}</p>
-                {props.isNew && <div className="badge badge-primary">new</div> }
+                {Boolean(props.isNew) && <div className="badge badge-primary">new</div> } 
                 
             </div>
         </div>
@@ -42,7 +42,7 @@ function ShoeCard(props){
 
 export default function Components   ()   {
   return <div className='flex flex-col items-start gap-4'>
-       <ShoeCard isNew={false}  image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="requin" />
+       <ShoeCard    image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="requin" />
        <ShoeCard isNew  image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="basketball" />
        <ShoeCard isNew image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" title="tenis" />
   </div>
