@@ -32,7 +32,8 @@ function ShoeCard(props){
             </picture>
             <div className="card-body">
                 <p className="card-title">{props.title}</p>
-                <Badge isNew={props.isNew} />
+                {props.isNew ? <div className="badge badge-primary">new</div> : null}
+                
             </div>
         </div>
 
