@@ -44,22 +44,25 @@ const SHOES = [{
     image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     title: "requin",
     isNew: true,
+    id: 1,
   },
   {
     image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     title: "basketball",
     isNew: false,
+    id: 2,
   },
   {
     image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     title: "tenis",
     isNew: true,
+    id: 3,
   }]
 
 export default function Components   ()   {
   return <div className='flex flex-col items-start gap-4'>
         {SHOES.map((shoe) =>  (
-           <ShoeCard  image={shoe.image} title={shoe.title} isNew={shoe.isNew} />
+           <ShoeCard key={shoe.id} {...shoe} />
         ))}
        
 
