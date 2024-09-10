@@ -59,7 +59,7 @@ const SHOES = [{
 export default function Components   ()   {
   return <div className='flex flex-col items-start gap-4'>
         {SHOES.map((shoe) =>  (
-            <p>{shoe.title}</p>
+           <ShoeCard  image={shoe.image} title={shoe.title} isNew={shoe.isNew} />
         ))}
        
 
